@@ -45,7 +45,6 @@ header .icon {
 
 header .icon-anime {
   animation: fade-out .3s linear 2.5s forwards;
-  visibility: visible;
   z-index: 10;
 }
 
@@ -66,6 +65,7 @@ header .photo {
 
 header .lineart {
   transition: opacity .3s;
+  animation: fade-out .3s linear 2.5s forwards;
 }
 
 header .lineart path {
@@ -107,6 +107,7 @@ header .lineart path {
   100% {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
   }
 }
 
@@ -240,7 +241,6 @@ header .content {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   opacity: 0;
   animation: fade-in .3s linear 3.2s forwards;
-  animation: fade-in .3s linear 3.2s forwards;
 
 }
 
@@ -251,6 +251,7 @@ header .content {
   height: 100vh;
   position: absolute;
   z-index: 100;
+  animation: fade-out 0s linear 3.3s forwards;
 }
 
 .shutter .s1 {
