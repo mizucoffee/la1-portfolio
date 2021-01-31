@@ -16,4 +16,45 @@
 h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 48pt;
+  line-height: 1em;
+}
+
+.button {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16pt;
+  line-height: 1em;
+  display: block;
+  width: 160px;
+  margin: 24px 16px;
+  color: white;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.button:before {
+  height: 1px;
+  width: 100%;
+  background: white;
+  display: block;
+  content: "";
+  margin-bottom:10px;
+  transition: all .3s;
+}
+
+.button:after {
+  height: 1px;
+  width: 100%;
+  background: white;
+  display: block;
+  content: "";
+  margin-top:6px;
+  transition: all .3s;
+}
+
+.button:hover:before {
+  transform: scaleX(0);
+}
+
+.button:hover:after {
+  transform: scaleX(-0.2);
 }

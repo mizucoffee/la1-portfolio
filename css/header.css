@@ -1,3 +1,8 @@
+body {
+  overflow: hidden;
+  animation: scroll-lock 3s forwards;
+}
+
 header,
 section {
   height: 100vh;
@@ -26,18 +31,22 @@ header .box {
 header #particle-animation {
   position: absolute;
   z-index: 3;
-  opacity: 0.3;
+  opacity: 0;
+  animation: fade-in-0-3 .5s ease-in 3.8s forwards;
 }
 
 header .icon {
-  border-radius: 50%;
-  animation: zoom-in 1.5s cubic-bezier(0.65, 0, 0.35, 1) 2s forwards,
-    fade-out .5s linear 3s forwards;
+  animation: zoom-in 1.5s ease-in 1.9s forwards;
   transform-origin: center;
   position: relative;
-  z-index: 10;
   width: 500px;
   height: 500px;
+}
+
+header .icon-anime {
+  animation: fade-out .3s linear 2.5s forwards;
+  visibility: visible;
+  z-index: 10;
 }
 
 header .icon > * {
@@ -52,7 +61,7 @@ header .icon > * {
 header .photo {
   opacity: 0;
   transition: opacity .3s;
-  animation: fade-in .8s linear 1.6s forwards;
+  animation: fade-in .5s linear 1.3s forwards;
 }
 
 header .lineart {
@@ -69,11 +78,32 @@ header .lineart path {
 
 @keyframes lineart {
   0% {}
-  100% { stroke-dashoffset: 0; }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scroll-lock {
+  0% {
+    overflow: hidden;
+  }
+
+  99% {
+    overflow: hidden;
+  }
+
+  100% {
+    overflow: auto;
+  }
 }
 
 @keyframes fade-out {
-  0% { opacity: 1; }
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
   100% {
     opacity: 0;
     visibility: hidden;
@@ -81,39 +111,177 @@ header .lineart path {
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-0-3 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
 }
 
 @keyframes zoom-in {
-  0% { transform: scale(1) rotate(0deg); }
-  100% { transform: scale(50) rotate(480deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(70) rotate(480deg);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes radius {
+  0% {
+    border-radius: 0%;
+  }
+
+  100% {
+    border-radius: 50%;
+  }
+}
+
+header .slidein {
+  opacity: 0;
+  animation: slide-in .7s ease 0s forwards;
+}
+
+header .slidein.ad3 {
+  animation-delay: 3s;
+}
+
+header .slidein.ad3-1 {
+  animation-delay: 3.1s;
+}
+
+header .slidein.ad3-2 {
+  animation-delay: 3.2s;
+}
+
+header .slidein.ad3-3 {
+  animation-delay: 3.3s;
+}
+
+header .slidein.ad3-4 {
+  animation-delay: 3.4s;
+}
+
+header .slidein {
+  opacity: 0;
+  animation: slide-in .7s ease 3s forwards;
 }
 
 header .content {
   opacity: 0;
-  animation: fade-in .3s linear 2.5s forwards;
+  animation: fade-in .3s linear 2.3s forwards;
   z-index: 5;
 }
 
 .content .portrait {
   width: 200px;
   border-radius: 50%;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .content .title {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 15pt;
+  font-size: 20pt;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.content .affiliation {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16pt;
+  line-height: 1em;
+  /*  margin-top: 20px;*/
   margin-bottom: 12px;
 }
 
 .bg {
   z-index: 0;
   opacity: 0;
-  animation: fade-in .3s linear 2.5s forwards;
+  animation: fade-in .3s linear 2.3s forwards;
 
-  background-image: linear-gradient(180deg, rgba(0, 0, 20, 0), rgba(0, 0, 20, 0.3) 30%, rgba(0, 0, 20, 1));
+  /*  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/image/night.jpg);*/
+  background-image: url(/image/night.jpg);
   background-size: cover;
   background-position: center;
+}
+
+.bg:before {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  animation: fade-in .3s linear 3.2s forwards;
+  animation: fade-in .3s linear 3.2s forwards;
+
+}
+
+.shutter {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+}
+
+.shutter .s1 {
+  width: 100vw;
+  height: 0;
+  background: #0e0e0e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  animation: shutter .5s ease-in-out 2.8s forwards;
+}
+
+.shutter .s2 {
+  width: 100vw;
+  height: 0;
+  background: #0e0e0e;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: shutter .5s ease-in-out 2.8s forwards;
+}
+
+@keyframes shutter {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 50vh;
+  }
+  100% {
+    height: 0;
+  }
 }
