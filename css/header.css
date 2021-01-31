@@ -256,33 +256,48 @@ header .content {
 
 .shutter .s1 {
   width: 100vw;
-  height: 0;
+  height: 50vh;
   background: #0e0e0e;
   position: absolute;
   top: 0;
   left: 0;
-  
-  animation: shutter .5s ease-in-out 2.8s forwards;
+  transform: translateY(-50vh);
+
+  animation: s1 .5s ease-in-out 2.8s forwards;
 }
 
 .shutter .s2 {
   width: 100vw;
-  height: 0;
+  height: 50vh;
   background: #0e0e0e;
   position: absolute;
   bottom: 0;
   left: 0;
-  animation: shutter .5s ease-in-out 2.8s forwards;
+  transform: translateY(50vh);
+
+  animation: s2 .5s ease-in-out 2.8s forwards;
 }
 
-@keyframes shutter {
+@keyframes s1 {
   0% {
-    height: 0;
+    transform: translateY(-50vh);
   }
   50% {
-    height: 50vh;
+    transform: translateY(0vh);
   }
   100% {
-    height: 0;
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes s2 {
+  0% {
+    transform: translateY(50vh);
+  }
+  50% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(50vh);
   }
 }
