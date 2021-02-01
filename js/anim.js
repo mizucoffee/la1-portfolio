@@ -1,12 +1,9 @@
+const images = ['bamboo', 'night', 'penguin', 'redpanda', 'seimei', 'tea', 'tenryuji', 'train', 'white']
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('path').forEach(path => {
     path.style.strokeDasharray = path.getTotalLength()
     path.style.strokeDashoffset = path.getTotalLength()
   })
-  
-  window.addEventListener('scroll', () => {
-    if(window.innerHeight/4*3 < window.scrollY) {
-      document.querySelector('.standing').classList.add('show')
-    }
-  })
+　
+  document.querySelector('.bg').style.backgroundImage = `url(/image/${images[Math.floor(Math.random()*images.length)]}.webp)`;
 })
