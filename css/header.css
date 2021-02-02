@@ -32,7 +32,7 @@ header #particle-animation {
   position: absolute;
   z-index: 3;
   opacity: 0;
-  animation: fade-in-0-5 .5s ease-in 3.8s forwards;
+  animation: fade-in-0-5 .5s ease-in 4.2s forwards;
 }
 
 header .icon {
@@ -45,7 +45,7 @@ header .icon {
 
 header .icon-anime {
   animation: fade-out .3s linear 2.5s forwards;
-  z-index: 10;
+  z-index: 100;
 }
 
 header .icon > * {
@@ -169,23 +169,23 @@ header .slidein {
 }
 
 header .slidein.ad3 {
-  animation-delay: 3s;
+  animation-delay: 3.8s;
 }
 
 header .slidein.ad3-1 {
-  animation-delay: 3.1s;
+  animation-delay: 3.9s;
 }
 
 header .slidein.ad3-2 {
-  animation-delay: 3.2s;
+  animation-delay: 4.0s;
 }
 
 header .slidein.ad3-3 {
-  animation-delay: 3.3s;
+  animation-delay: 4.1s;
 }
 
 header .slidein.ad3-4 {
-  animation-delay: 3.4s;
+  animation-delay: 4.2s;
 }
 
 header .slidein {
@@ -220,35 +220,14 @@ header .content {
   margin-bottom: 12px;
 }
 
-.bg {
-  z-index: 0;
-  opacity: 0;
-  animation: fade-in .3s linear 2.3s forwards;
-
-  background-size: cover;
-  background-position: center;
-}
-
-.bg:before {
-  content: "";
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  opacity: 0;
-  animation: fade-in .3s linear 3.2s forwards;
-}
-
 .shutter {
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 100;
-  animation: fade-out 0s linear 3.3s forwards;
+  z-index: 90;
+  animation: fade-out 0s linear 3.9s forwards;
 }
 
 .shutter .s1 {
@@ -260,7 +239,7 @@ header .content {
   left: 0;
   transform: translateY(-50vh);
 
-  animation: s1 .5s ease-in-out 2.8s forwards;
+  animation: s1 .3s ease-in-out 3.4s forwards;
 }
 
 .shutter .s2 {
@@ -272,7 +251,7 @@ header .content {
   left: 0;
   transform: translateY(50vh);
 
-  animation: s2 .5s ease-in-out 2.8s forwards;
+  animation: s2 .3s ease-in-out 3.4s forwards;
 }
 
 @keyframes s1 {
@@ -296,5 +275,126 @@ header .content {
   }
   100% {
     transform: translateY(50vh);
+  }
+}
+
+.camera-ui {
+  z-index: 50;
+  opacity: 0;
+  animation: fade-in 0s linear 2.3s forwards,
+    fade-out .3s linear 3.8s forwards;
+}
+
+.camera-ui > img {
+  position: absolute;
+}
+
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 10vmin;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+
+.left.top {
+  max-width: 90vw;
+  max-height: 40vh;
+}
+
+.left.bottom {
+  max-width: 17vw;
+  max-height: 47vh;
+}
+
+.right.top {
+  max-width: 17vw;
+  max-height: 47vh;
+}
+
+.right.bottom {
+  max-width: 17vw;
+  max-height: 24vh;
+}
+
+.bottom-ui {
+  bottom: 0;
+  background: #000;
+  width: 100%;
+  height: 10vmin;
+  object-fit: contain;
+}
+
+
+.bg {
+  z-index: 0;
+  opacity: 0;
+  animation: fade-in .3s linear 2.3s forwards,
+    lens .8s linear 2.5s forwards;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  transform: scale(1.15);
+}
+
+.bg:after {
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  animation: fade-in .3s linear 3.9s forwards;
+}
+
+.bg:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  margin: -10%;
+  width: 120%;
+  height: 120%;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  pointer-events: none;
+  animation: af .8s linear 2.5s forwards;
+}
+
+
+@keyframes af {
+  0% {
+    backdrop-filter: blur(20px);
+  }
+  40% {
+    backdrop-filter: blur(0px);
+  }
+  60% {
+    backdrop-filter: blur(8px);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+  }
+}
+@keyframes lens {
+  0% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
