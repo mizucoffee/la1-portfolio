@@ -239,7 +239,7 @@ header .content {
   left: 0;
   transform: translateY(-50vh);
 
-  animation: s1 .3s ease-in-out 3.4s forwards;
+  animation: s1 .4s ease-in-out 3.4s forwards;
 }
 
 .shutter .s2 {
@@ -251,7 +251,7 @@ header .content {
   left: 0;
   transform: translateY(50vh);
 
-  animation: s2 .3s ease-in-out 3.4s forwards;
+  animation: s2 .4s ease-in-out 3.4s forwards;
 }
 
 @keyframes s1 {
