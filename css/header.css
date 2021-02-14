@@ -98,6 +98,90 @@ header .lineart path {
     fade-out .3s linear 1.4s forwards;
 }
 
+header #photo, header #about, header #contact {
+  z-index: 5;
+}
+
+
+.hidden {
+/*  animation: fade-out .3s linear 0s forwards;*/
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+header #photo .photo-box {
+  display: flex;
+  max-height: 60vh;
+  width: 85vw;
+  margin: 32px auto 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  
+}
+
+header #photo .photo-box img {
+  display: block;
+  width: 300px;
+  margin: 16px 32px;
+}
+
+header #about h1, header #photo h1, header #contact h1 {
+  font-size: 36pt;
+  margin-bottom: 32px;
+}
+header #about img {
+  width: 160px;
+  margin-top: 32px;
+}
+
+header #about h2 {
+  font-size: 24pt;
+}
+
+header #about blockquote {
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 14pt;
+}
+
+header #about p {
+  width: 70vw;
+  margin: 16px auto;
+}
+
+header #about .tac {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+header .back-btn{
+  margin: 32px auto 0px;
+}
+
+header #contact .button {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+header #contact .back-btn {
+  margin-top: 38px;
+}
+header #about .back-btn {
+  margin-bottom: 32px;
+}
+
+header #contact .icon-btn img {
+  width: 64px;
+  margin: 10px;
+  margin-bottom: 16px;
+  transition: all 0.15s ease-in-out;
+}
+header #contact .icon-btn:hover img {
+  margin: 6px;
+  margin-bottom: 12px;
+  width: 72px;
+}
+
 @-webkit-keyframes lineart {
   0% {}
 
@@ -428,10 +512,11 @@ header .slidein {
 }
 
 header .content {
-  opacity: 0;
-  -webkit-animation: fade-in .3s linear 2.3s forwards;
-  -moz-animation: fade-in .3s linear 2.3s forwards;
-  animation: fade-in .3s linear 2.3s forwards;
+  transition: opacity .3s, visibility .3s;
+}
+
+header .content#main {
+/*  opacity: 0;*/
   z-index: 5;
 }
 

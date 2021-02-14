@@ -10,7 +10,8 @@
   <script defer src="/js/particle.js"></script>
   <script defer src="/js/anim.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100&display=swap" rel="stylesheet">
   <meta property="og:url" content="https://ritsuki-goto-la1-portfolio.netlify.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ritsuki Goto" />
@@ -93,19 +94,73 @@
 
       </div>
     </div>
-    <div class="content flex flex-center">
+    <div id="main" class="content flex flex-center">
       <div class="tac">
         <img src="/image/portrait.webp" alt="Ritsuki Goto" class="portrait slidein ad3">
         <h1 class="slidein ad3-1">Ritsuki Goto</h1>
         <div class="affiliation slidein ad3-2">@ Kyoto Computer Gakuin</div>
         <div class="title slidein ad3-3">Web Service Course Mentor</div>
         <div class="flex flex-center flex-wrap slidein ad3-4">
-          <a class="button" href="https://www.facebook.com/Ritsuki.Goto" target="_blank">Facebook</a>
-          <a class="button" href="https://twitter.com/lit_mizu" target="_blank">Twitter</a>
-          <a class="button" href="https://github.com/mizucoffee" target="_blank">GitHub</a>
-          <a class="button" href="https://www.flickr.com/photos/190259579@N02/" target="_blank">Flickr</a>
+          <a class="button" href="#" id="about-btn">About</a>
+          <a class="button" href="#" id="photo-btn">Photo</a>
+          <a class="button" href="#" id="contact-btn">Contact</a>
+          <!--<a class="button" href="https://www.flickr.com/photos/190259579@N02/" target="_blank">Flickr</a>-->
         </div>
+      </div>
+    </div>
+    <div id="about" class="content flex flex-center hidden">
+      <div class="tac">
+        <img src="/image/portrait.webp" alt="Ritsuki Goto" class="portrait">
+        <h1>Ritsuki Goto</h1>
+        <h2>About me</h2>
+        <p>
+          普段はネットワーク技術について勉強している。<br>
+          興味のあることにはまっすぐ動くことに定評がある（本人談）。<br>
+          <br>
+          基本的にWeb系のソフトウェア開発を主軸に活動しているが、ネットワーク構築、サーバ管理や電子工作もすることがある。<br>
+          <br>
+          Life is Tech ! においてはWebサービスコース、Androidコースのメンターをしている。<br>
+        </p>
 
+        <h2>Motto</h2>
+        <blockquote>焙烙の割れも3年置けば役に立つ</blockquote>
+        <p>
+          「一見使えない・不要に思えるものでも、いつか役に立つであろう」という意味のことわざです。<br>
+          今は分からなくても全ての行動に意味・価値があり、役に立つ日は来るという持論からきた座右の銘です。
+        </p>
+        <a class="button back-btn" id="about-back-btn" href="#">Back</a>
+      </div>
+    </div>
+    <div id="photo" class="content flex flex-center hidden">
+      <div class="tac">
+        <h1>Photo Gallary</h1>
+        <div class="photo-box">
+          <a href="//www.flickr.com/photos/190259579@N02/50803236108/" target="_blank"><img src="/image/white.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50804096012/" target="_blank"><img src="/image/train.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803830681/" target="_blank"><img src="/image/tenryuji.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803984201/" target="_blank"><img src="/image/tea.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50809924857/" target="_blank"><img src="/image/seimei.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803822636/" target="_blank"><img src="/image/redpanda.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803984136/" target="_blank"><img src="/image/penguin.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803984376/" target="_blank"><img src="/image/night.webp"></a>
+          <a href="//www.flickr.com/photos/190259579@N02/50803080983/" target="_blank"><img src="/image/bamboo.webp"></a>
+        </div>
+        <a class="button back-btn" id="photo-back-btn" href="#">Back</a>
+      </div>
+    </div>
+    <div id="contact" class="content flex flex-center hidden">
+      <div class="tac">
+        <h1>Contact</h1>
+        <h2>SNS</h2>
+        <div class="flex">
+          <a class="icon-btn" href="//facebook.com/Ritsuki.Goto" target="_blank"><img src="/image/facebook.png"></a>
+          <a class="icon-btn" href="//github.com/mizucoffee" target="_blank"><img src="/image/github.png"></a>
+          <a class="icon-btn" href="//twitter.com/lit_mizu" target="_blank"><img src="/image/twitter.svg"></a>
+          <a class="icon-btn" href="//www.flickr.com/photos/190259579@N02" target="_blank"><img src="/image/flickr.png"></a>
+        </div>
+        <h2>E-Mail address</h2>
+        <p>i(at)mizu.coffee</p>
+        <a class="button back-btn" id="contact-back-btn" href="#">Back</a>
       </div>
     </div>
     <div class="shutter">
